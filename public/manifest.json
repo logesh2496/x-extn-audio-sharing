@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "Space DJ",
+  "version": "1.0.2",
+  "description": "Mix any tab's audio into your X (Twitter) Space mic — play music, clips, and sound effects live while you host. Includes a built-in mixer to balance tab audio against your microphone.",
+  "icons": {
+    "16": "dj.png",
+    "48": "dj.png",
+    "128": "dj.png"
+  },
+  "action": {
+    "default_title": "Toggle Space DJ panel",
+    "default_icon": {
+      "16": "dj.png",
+      "48": "dj.png",
+      "128": "dj.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": ["cookies", "tabs", "storage", "webNavigation", "desktopCapture", "activeTab", "scripting", "history"],
+  "host_permissions": [
+    "https://*.x.com/*",
+    "https://x.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["dj.png"],
+      "matches": ["https://*.x.com/*", "https://x.com/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.x.com/*", 
+        "https://x.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://*.x.com/*", 
+        "https://x.com/*"
+      ],
+      "js": ["inject.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    }
+  ]
+}
