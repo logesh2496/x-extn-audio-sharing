@@ -4,7 +4,12 @@
       "WebSearch",
       "Bash(npm run *)",
       "Bash(npx tsc *)",
-      "Bash(md5 src/App.tsx)"
+      "Bash(md5 src/App.tsx)",
+      "Read(//tmp/**)",
+      "Bash(rm -rf build && npm run build >/tmp/b.log 2>&1; tail -3 /tmp/b.log; echo \"===manifests===\"; find build -name manifest.json; echo \"===build root===\"; ls build)"
+    ],
+    "additionalDirectories": [
+      "/private/tmp"
     ]
   }
 }

@@ -2,6 +2,7 @@
   "name": "dj-extn",
   "private": true,
   "version": "0.0.1",
+  "description": "Space DJ — a Chrome extension that mixes any browser tab's audio into your X (Twitter) Space microphone in real time, with a built-in dual-channel mixer to balance tab audio against your mic.",
   "type": "module",
   "scripts": {
     "dev": "vite",
