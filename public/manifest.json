@@ -20,16 +20,7 @@
     "service_worker": "background.js",
     "type": "module"
   },
-  "permissions": [
-    "cookies",
-    "tabs",
-    "storage",
-    "webNavigation",
-    "desktopCapture",
-    "activeTab",
-    "scripting",
-    "history"
-  ],
+  "permissions": ["tabs", "storage", "desktopCapture", "activeTab"],
   "host_permissions": ["https://*.x.com/*", "https://x.com/*"],
   "web_accessible_resources": [
     {
